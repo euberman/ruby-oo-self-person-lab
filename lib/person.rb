@@ -11,9 +11,8 @@ class Person
      end
  
      def happiness
- 
-         [@happiness, 0, 10].sort[1]
-         
+        @happiness = @happiness > 10 ? 10 : @happiness
+        @happiness = @happiness < 0 ? 0 : @happiness
      end
  
      def hygiene
@@ -22,7 +21,7 @@ class Person
  
      def happy?
       @happiness > 7
-      end
+     end
  
       def clean?
          @hygiene > 7
@@ -39,9 +38,8 @@ class Person
       end
  
     def work_out
-        self.happiness = @happiness += 2
-        self.hygiene = @hygiene -= 3
- 
+        self.happiness = @happiness + 2
+        self.hygiene = @hygiene - 3
         '♪ another one bites the dust ♫'
     end
 
